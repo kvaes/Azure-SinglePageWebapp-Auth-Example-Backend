@@ -1,5 +1,7 @@
 <?PHP
 require_once __DIR__ . '/vendor/autoload.php';
+use \Firebase\JWT\JWT;
+$clientid = getenv('clientid');
 
 // Functions to get public keys
 function loadKeysFromAzure($string_microsoftPublicKeyURL) {
@@ -33,11 +35,12 @@ if ($accessToken == "") {
 } else {
 	$string_microsoftPublicKeyURL = 'https://login.windows.net/common/discovery/keys';
 	$array_publicKeysWithKIDasArrayKey = loadKeysFromAzure($string_microsoftPublicKeyURL);
-	print_r($array_publicKeysWithKIDasArrayKey);
 	
-	use \Firebase\JWT\JWT;
 	$token = JWT::decode($accessToken, $array_publicKeysWithKIDasArrayKey, array('RS256'));
 	print_r($token);
+	if ($token->aud == $clientid) {
+		echo "Validated";
+	}
 }
 
 ?>

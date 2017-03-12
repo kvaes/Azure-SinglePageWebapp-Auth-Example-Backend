@@ -3,9 +3,9 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 $provider = new TheNetworg\OAuth2\Client\Provider\Azure([
-    'clientId'          => getenv('clientId');,
-    'clientSecret'      => getenv('clientSecret');,
-    'redirectUri'       => getenv('redirectUri');
+    'clientId'          => getenv('clientId'),
+    'clientSecret'      => getenv('clientSecret'),
+    'redirectUri'       => getenv('redirectUri')
 ]);
 
 $headers = getallheaders();

@@ -4,93 +4,27 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit38f0950bcb57d6b47153973bfabc09fe
+class ComposerStaticInitfa8a069a25113eba5c84602ce0b198a9
 {
-    public static $files = array (
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'E' => 
         array (
-            'TheNetworg\\OAuth2\\Client\\' => 25,
-        ),
-        'P' => 
-        array (
-            'Psr\\Http\\Message\\' => 17,
-        ),
-        'L' => 
-        array (
-            'League\\OAuth2\\Client\\' => 21,
-        ),
-        'G' => 
-        array (
-            'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
-            'GuzzleHttp\\' => 11,
-        ),
-        'F' => 
-        array (
-            'Firebase\\JWT\\' => 13,
+            'Emarref\\Jwt\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'TheNetworg\\OAuth2\\Client\\' => 
+        'Emarref\\Jwt\\' => 
         array (
-            0 => __DIR__ . '/..' . '/thenetworg/oauth2-azure/src',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'League\\OAuth2\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
-        ),
-        'GuzzleHttp\\Psr7\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
-        ),
-        'GuzzleHttp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-        ),
-        'Firebase\\JWT\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'S' => 
-        array (
-            'SecurityLib' => 
-            array (
-                0 => __DIR__ . '/..' . '/ircmaxell/security-lib/lib',
-            ),
-        ),
-        'R' => 
-        array (
-            'RandomLib' => 
-            array (
-                0 => __DIR__ . '/..' . '/ircmaxell/random-lib/lib',
-            ),
+            0 => __DIR__ . '/..' . '/emarref/jwt/src',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit38f0950bcb57d6b47153973bfabc09fe::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit38f0950bcb57d6b47153973bfabc09fe::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit38f0950bcb57d6b47153973bfabc09fe::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitfa8a069a25113eba5c84602ce0b198a9::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitfa8a069a25113eba5c84602ce0b198a9::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

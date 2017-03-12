@@ -1,7 +1,6 @@
 <?PHP
 require_once __DIR__ . '/vendor/autoload.php';
 use \Firebase\JWT\JWT;
-$clientid = getenv('clientid');
 
 // Functions to get public keys
 function loadKeysFromAzure($string_microsoftPublicKeyURL) {
@@ -26,21 +25,26 @@ function getPublicKeyFromX5C($string_certText) {
 }
 
 // JWT Validation
-$headers = getallheaders();
-$authorization = explode(' ', $headers['Authorization']);
-$accessToken = $authorization[1];
+function validateAccessToken() {
+	$clientid = getenv('clientid');
+	$headers = getallheaders();
+	$authorization = explode(' ', $headers['Authorization']);
+	$accessToken = $authorization[1];
 
-if ($accessToken == "") {
-	echo "No access token retrieved.";
-} else {
-	$string_microsoftPublicKeyURL = 'https://login.windows.net/common/discovery/keys';
-	$array_publicKeysWithKIDasArrayKey = loadKeysFromAzure($string_microsoftPublicKeyURL);
-	
-	$token = JWT::decode($accessToken, $array_publicKeysWithKIDasArrayKey, array('RS256'));
-	print_r($token);
-	if ($token->aud == $clientid) {
-		echo "Validated";
+	if ($accessToken == "") {
+		echo "No access token retrieved";
+	} else {
+		echo "Process token";
+		$string_microsoftPublicKeyURL = 'https://login.windows.net/common/discovery/keys';
+		$array_publicKeysWithKIDasArrayKey = loadKeysFromAzure($string_microsoftPublicKeyURL);	
+		$token = JWT::decode($accessToken, $array_publicKeysWithKIDasArrayKey, array('RS256'));
+		if ($token->aud == $clientid) {
+			return $token;
+		}
 	}
 }
 
+$token = validateAccessToken();
+print_r($token);
+	
 ?>

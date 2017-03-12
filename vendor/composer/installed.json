@@ -1,46 +1,47 @@
 [
     {
-        "name": "emarref/jwt",
-        "version": "1.0.3",
-        "version_normalized": "1.0.3.0",
+        "name": "firebase/php-jwt",
+        "version": "v4.0.0",
+        "version_normalized": "4.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/emarref/jwt.git",
-            "reference": "79f563750ff90dabd4fa677c4b4e5ec9ed52d9b4"
+            "url": "https://github.com/firebase/php-jwt.git",
+            "reference": "dccf163dc8ed7ed6a00afc06c51ee5186a428d35"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/emarref/jwt/zipball/79f563750ff90dabd4fa677c4b4e5ec9ed52d9b4",
-            "reference": "79f563750ff90dabd4fa677c4b4e5ec9ed52d9b4",
+            "url": "https://api.github.com/repos/firebase/php-jwt/zipball/dccf163dc8ed7ed6a00afc06c51ee5186a428d35",
+            "reference": "dccf163dc8ed7ed6a00afc06c51ee5186a428d35",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.4"
+            "php": ">=5.3.0"
         },
-        "require-dev": {
-            "phpunit/phpunit": "*"
-        },
-        "suggest": {
-            "ext-openssl": "Enables more token encryption options"
-        },
-        "time": "2016-09-05T20:33:06+00:00",
+        "time": "2016-07-18T04:51:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Emarref\\Jwt\\": "src/"
+                "Firebase\\JWT\\": "src"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "MIT"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
-                "name": "Malcolm Fell",
-                "email": "emarref@gmail.com"
+                "name": "Neuman Vong",
+                "email": "neuman+pear@twilio.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Anant Narayanan",
+                "email": "anant@php.net",
+                "role": "Developer"
             }
         ],
-        "description": "A JWT implementation"
+        "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
+        "homepage": "https://github.com/firebase/php-jwt"
     }
 ]

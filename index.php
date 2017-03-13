@@ -34,7 +34,6 @@ function validateAccessToken() {
 	if ($accessToken == "") {
 		echo "No access token retrieved";
 	} else {
-		echo "Process token";
 		$string_microsoftPublicKeyURL = 'https://login.windows.net/common/discovery/keys';
 		$array_publicKeysWithKIDasArrayKey = loadKeysFromAzure($string_microsoftPublicKeyURL);	
 		$token = JWT::decode($accessToken, $array_publicKeysWithKIDasArrayKey, array('RS256'));
@@ -45,6 +44,26 @@ function validateAccessToken() {
 }
 
 $token = validateAccessToken();
-print_r($token);
+if ($token <> "") {
+	echo '
+{
+	"0001": {
+		"ID": "Mittens",
+		"Description": "Mittens - Destroyer of pillows!"
+	},
+	"0002": {
+		"ID": "Buff",
+		"Description": "Buff - Lover of cat food..."
+	},
+	"0003": {
+		"ID": "Fluffy",
+		"Description": "Fluffy - Where no hair has gone before!"
+	}
+}
+	';
+} else {
+	die();
+}
+
 	
 ?>

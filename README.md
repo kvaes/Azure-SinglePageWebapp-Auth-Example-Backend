@@ -14,4 +14,4 @@ Configuration
 
 Credits
 =======
-Based on [thenetworg/oauth2-azure](https://github.com/thenetworg/oauth2-azure)
+Based on [firebase/php-jwt](https://github.com/firebase/php-jwt)
